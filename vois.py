@@ -5,12 +5,13 @@ import wikipedia
 import webbrowser
 import os
 import pywhatkit
+
 import spacy
 from tkinter import Tk, Label, Button, Text, Scrollbar, END, Frame
 from threading import Thread
 import logging
 
-# Setup logging
+# Setup logginggg
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class VoiceAssistant:
