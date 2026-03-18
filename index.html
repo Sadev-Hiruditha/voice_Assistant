@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>AI Voice Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>🎤 <span>Voice Assistant</span></h1>
+            <p>Powered by Claude AI · Web Speech API</p>
+        </div>
+
+        <!-- Orb + Status -->
+        <div class="orb-wrap">
+            <div class="orb" id="orb" title="Click to speak">🎙️</div>
+            <div class="status-badge ready" id="statusBadge">
+                <div class="dot"></div>
+                <span id="statusText">Ready to assist you</span>
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-primary" id="listenBtn" onclick="startListening()">🎙️ Start Listening</button>
+                <button class="btn btn-neutral" id="stopBtn" onclick="stopListening()" disabled>⏹ Stop</button>
+                <button class="btn btn-danger" onclick="quitApp()">❌ Quit</button>
+            </div>
+        </div>
+
+        <!-- Quick Commands -->
+        <div class="quick-section">
+            <h3>Quick Commands</h3>
+            <div class="chips" id="chips">
+                <button class="chip" onclick="sendText('What time is it?')">🕐 What time is it?</button>
+                <button class="chip" onclick="sendText('What is today\'s date?')">📅 Today\'s date</button>
+                <button class="chip" onclick="sendText('Search Wikipedia for Python programming')">🔍 Wikipedia
+                    search</button>
+                <button class="chip" onclick="sendText('Open Google in the browser')">🌐 Open browser</button>
+                <button class="chip" onclick="sendText('Play Shape of You on YouTube')">▶️ Play music</button>
+                <button class="chip" onclick="sendText('Open Notepad')">📝 Open Notepad</button>
+                <button class="chip" onclick="sendText('Hello! What can you do?')">👋 Help</button>
+            </div>
+        </div>
+
+        <!-- Log -->
+        <div class="log-section">
+            <div class="log-header">
+                <span>📋 Response Log</span>
+                <button class="log-clear" onclick="clearLog()">Clear</button>
+            </div>
+            <div class="log-body" id="logBody">
+                <div class="empty-state" id="emptyState">No messages yet. Click "Start Listening" or a quick command.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">Voice Assistant UI · Built with Web Speech API & Claude AI</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
